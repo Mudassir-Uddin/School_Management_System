@@ -44,3 +44,10 @@ Route::post('/ClassSubjectsStore', [App\Http\Controllers\ClassSubjectsController
 Route::get('/ClassSubjectsEdit/{id}', [App\Http\Controllers\ClassSubjectsController::class, 'edit'])->name('ClassSubjects.edit');
 Route::post('/ClassSubjectsUpdate/{id}', [App\Http\Controllers\ClassSubjectsController::class, 'update'])->name('ClassSubjects.update');
 Route::get('/ClassSubjectsDestroy/{id}', [App\Http\Controllers\ClassSubjectsController::class, 'destroy'])->name('ClassSubjects.destroy');
+
+Route::get('/Parents', [App\Http\Controllers\ParentsController::class, 'index'])->name('Parents.index');
+Route::get('/ParentsInsert', [App\Http\Controllers\ParentsController::class, 'create'])->name('Parents.create');
+Route::post('/ParentsStore', [App\Http\Controllers\ParentsController::class, 'store'])->name('Parents.store');
+Route::get('/ParentsEdit/{id}', [App\Http\Controllers\ParentsController::class, 'edit'])->name('Parents.edit');
+Route::post('/ParentsUpdate/{id}', [App\Http\Controllers\ParentsController::class, 'update'])->name('Parents.update');
+Route::get('/ParentsDestroy/{id}', [App\Http\Controllers\ParentsController::class, 'destroy'])->name('Parents.destroy');

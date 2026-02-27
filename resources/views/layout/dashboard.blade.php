@@ -310,6 +310,27 @@
                 </ul>
             </li>
             <!-- End Class Subjects Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#parents-nav" data-bs-toggle="collapse"
+                    href="/Parents">
+                    <i class="bi bi-person"></i><span>Parents</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="parents-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Parents">
+                            <i class="bi bi-circle"></i><span>List Parents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ParentsInsert">
+                            <i class="bi bi-circle"></i><span>Add Parent</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Parents Nav -->
 
         </ul>
 
