@@ -30,3 +30,10 @@ Route::post('/ClassesStore', [App\Http\Controllers\ClassesController::class, 'st
 Route::get('/ClassesEdit/{id}', [App\Http\Controllers\ClassesController::class, 'edit'])->name('Classes.edit');
 Route::post('/ClassesUpdate/{id}', [App\Http\Controllers\ClassesController::class, 'update'])->name('Classes.update');
 Route::get('/ClassesDestroy/{id}', [App\Http\Controllers\ClassesController::class, 'destroy'])->name('Classes.destroy');
+
+Route::get('/Subjects', [App\Http\Controllers\SubjectsController::class, 'index'])->name('Subjects.index');
+Route::get('/SubjectsInsert', [App\Http\Controllers\SubjectsController::class, 'create'])->name('Subjects.create');
+Route::post('/SubjectsStore', [App\Http\Controllers\SubjectsController::class, 'store'])->name('Subjects.store');
+Route::get('/SubjectsEdit/{id}', [App\Http\Controllers\SubjectsController::class, 'edit'])->name('Subjects.edit');
+Route::post('/SubjectsUpdate/{id}', [App\Http\Controllers\SubjectsController::class, 'update'])->name('Subjects.update');
+Route::get('/SubjectsDestroy/{id}', [App\Http\Controllers\SubjectsController::class, 'destroy'])->name('Subjects.destroy');

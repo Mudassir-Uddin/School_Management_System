@@ -228,6 +228,26 @@
                     </li>
                 </ul>
             </li><!-- End Sections Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#subjects-nav" data-bs-toggle="collapse"
+                    href="/Subjects">
+                    <i class="bi bi-book"></i><span>Subjects</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="subjects-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Subjects">
+                            <i class="bi bi-circle"></i><span>List Subjects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/SubjectsInsert">
+                            <i class="bi bi-circle"></i><span>Add Subject</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Subjects Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#academic-years-nav" data-bs-toggle="collapse"
