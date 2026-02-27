@@ -229,6 +229,26 @@
                 </ul>
             </li><!-- End Sections Nav -->
 
+                        <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#academic-years-nav" data-bs-toggle="collapse"
+                    href="/Academic_years">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Academic Years</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="academic-years-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Academic_years">
+                            <i class="bi bi-circle"></i><span>List Academic Years</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Academic_yearsInsert">
+                            <i class="bi bi-circle"></i><span>Add Academic Year</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Acadmic Year Nav -->
+
         </ul>
 
     </aside><!-- End Sidebar-->
