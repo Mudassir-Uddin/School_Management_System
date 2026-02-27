@@ -23,3 +23,10 @@ Route::post('/Academic_yearsStore', [App\Http\Controllers\Academic_YearsControll
 Route::get('/Academic_yearsEdit/{id}', [App\Http\Controllers\Academic_YearsController::class, 'edit'])->name('Academic_years.edit');
 Route::post('/Academic_yearsUpdate/{id}', [App\Http\Controllers\Academic_YearsController::class, 'update'])->name('Academic_years.update');
 Route::get('/Academic_yearsDestroy/{id}', [App\Http\Controllers\Academic_YearsController::class, 'destroy'])->name('Academic_years.destroy');
+
+Route::get('/Classes', [App\Http\Controllers\ClassesController::class, 'index'])->name('Classes.index');
+Route::get('/ClassesInsert', [App\Http\Controllers\ClassesController::class, 'create'])->name('Classes.create');
+Route::post('/ClassesStore', [App\Http\Controllers\ClassesController::class, 'store'])->name('Classes.store');
+Route::get('/ClassesEdit/{id}', [App\Http\Controllers\ClassesController::class, 'edit'])->name('Classes.edit');
+Route::post('/ClassesUpdate/{id}', [App\Http\Controllers\ClassesController::class, 'update'])->name('Classes.update');
+Route::get('/ClassesDestroy/{id}', [App\Http\Controllers\ClassesController::class, 'destroy'])->name('Classes.destroy');

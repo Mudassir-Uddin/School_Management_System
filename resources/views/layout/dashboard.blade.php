@@ -229,7 +229,7 @@
                 </ul>
             </li><!-- End Sections Nav -->
 
-                        <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#academic-years-nav" data-bs-toggle="collapse"
                     href="/Academic_years">
                     <i class="bi bi-layout-text-window-reverse"></i><span>Academic Years</span><i
@@ -248,6 +248,27 @@
                     </li>
                 </ul>
             </li><!-- End Acadmic Year Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#classes-nav" data-bs-toggle="collapse"
+                    href="/Classes">
+                    <i class="bi bi-bar-chart"></i><span>Classes</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="classes-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Classes">
+                            <i class="bi bi-circle"></i><span>List Classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ClassesInsert">
+                            <i class="bi bi-circle"></i><span>Add Class</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Classes Nav -->
 
         </ul>
 
