@@ -290,6 +290,27 @@
             </li>
             <!-- End Classes Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#class-subjects-nav" data-bs-toggle="collapse"
+                    href="/ClassSubjects">
+                    <i class="bi bi-book"></i><span>Class Subjects</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="class-subjects-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/ClassSubjects">
+                            <i class="bi bi-circle"></i><span>List Class Subjects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ClassSubjectsInsert">
+                            <i class="bi bi-circle"></i><span>Add Class Subject</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Class Subjects Nav -->
+
         </ul>
 
     </aside><!-- End Sidebar-->
