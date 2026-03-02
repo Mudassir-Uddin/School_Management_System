@@ -28,7 +28,13 @@ class Academic_yearsController extends Controller
             'status' => 'required|boolean',
         ]);
 
-        Academic_years::create($request->all());
+        $academic_year = new Academic_years();
+        $academic_year->name = $request->name;
+        $academic_year->start_date = $request->start_date;
+        $academic_year->end_date = $request->end_date;
+        $academic_year->status = $request->status;
+
+        $academic_year->save();
         return redirect('/Academic_years')->with('success', 'Academic year created successfully.');
     }
 

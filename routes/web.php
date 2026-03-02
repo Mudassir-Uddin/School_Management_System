@@ -57,6 +57,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/ParentsEdit/{id}', [App\Http\Controllers\ParentsController::class, 'edit'])->name('Parents.edit');
     Route::post('/ParentsUpdate/{id}', [App\Http\Controllers\ParentsController::class, 'update'])->name('Parents.update');
     Route::get('/ParentsDestroy/{id}', [App\Http\Controllers\ParentsController::class, 'destroy'])->name('Parents.destroy');
+
+    Route::get('/Users', [App\Http\Controllers\UsersController::class, 'index'])->name('Users.index');
+    Route::get('/UsersInsert', [App\Http\Controllers\UsersController::class, 'create'])->name('Users.create');
+    Route::post('/UsersStore', [App\Http\Controllers\UsersController::class, 'store'])->name('Users.store');
+    Route::get('/UsersEdit/{id}', [App\Http\Controllers\UsersController::class, 'edit'])->name('Users.edit');
+    Route::post('/UsersUpdate/{id}', [App\Http\Controllers\UsersController::class, 'update'])->name('Users.update');
+    Route::get('/UsersDestroy/{id}', [App\Http\Controllers\UsersController::class, 'destroy'])->name('Users.destroy');
 });
 
 require __DIR__ . '/auth.php';

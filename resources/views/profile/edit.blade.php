@@ -19,12 +19,12 @@
                 <div class="col-xl-4">
 
                     <div class="card">
-                        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        <div class="pt-4 card-body profile-card d-flex flex-column align-items-center">
 
                             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                            <h2>Kevin Anderson</h2>
+                            <h2>{{ Auth::user()->name }}</h2>
                             <h3>Web Designer</h3>
-                            <div class="social-links mt-2">
+                            <div class="mt-2 social-links">
                                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                                 <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -38,7 +38,7 @@
                 <div class="col-xl-8">
 
                     <div class="card">
-                        <div class="card-body pt-3">
+                        <div class="pt-3 card-body">
                             <!-- Bordered Tabs -->
                             <ul class="nav nav-tabs nav-tabs-bordered">
 
@@ -58,7 +58,7 @@
                                 </li>
 
                             </ul>
-                            <div class="tab-content pt-2">
+                            <div class="pt-2 tab-content">
 
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                     <h5 class="card-title">About</h5>
@@ -106,7 +106,7 @@
 
                                 </div>
 
-                                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                                <div class="pt-3 tab-pane fade profile-edit" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
                                     {{-- Email Verification Form --}}
@@ -121,59 +121,59 @@
                                         @method('PATCH')
 
                                         {{-- Profile Image --}}
-                                        <div class="row mb-4">
+                                        <div class="mb-4 row">
                                             <label class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                                             <div class="col-md-8 col-lg-9">
 
                                                 <img src="{{ $user->profile_image ? asset('storage/' . $user->profile_image) : asset('assets/img/profile-img.jpg') }}"
-                                                    alt="Profile" class="rounded-circle mb-3" width="120"
+                                                    alt="Profile" class="mb-3 rounded-circle" width="120"
                                                     height="120">
 
                                                 <input type="file" name="profile_image" class="form-control">
 
                                                 @error('profile_image')
-                                                    <div class="text-danger mt-1">{{ $message }}</div>
+                                                    <div class="mt-1 text-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
 
                                         {{-- Full Name --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="name" type="text" class="form-control"
                                                     value="{{ old('name', $user->name) }}" required>
 
                                                 @error('name')
-                                                    <div class="text-danger mt-1">{{ $message }}</div>
+                                                    <div class="mt-1 text-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
 
                                         {{-- Email --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label class="col-md-4 col-lg-3 col-form-label">Email</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="email" type="email" class="form-control"
                                                     value="{{ old('email', $user->email) }}" required>
 
                                                 @error('email')
-                                                    <div class="text-danger mt-1">{{ $message }}</div>
+                                                    <div class="mt-1 text-danger">{{ $message }}</div>
                                                 @enderror
 
                                                 {{-- Email Verification --}}
                                                 @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !$user->hasVerifiedEmail())
                                                     <div class="mt-2">
-                                                        <small class="text-warning d-block mb-1">
+                                                        <small class="mb-1 text-warning d-block">
                                                             Your email address is unverified.
                                                         </small>
 
-                                                        <button form="send-verification" class="btn btn-link p-0">
+                                                        <button form="send-verification" class="p-0 btn btn-link">
                                                             Click here to re-send verification email
                                                         </button>
 
                                                         @if (session('status') === 'verification-link-sent')
-                                                            <div class="text-success mt-2">
+                                                            <div class="mt-2 text-success">
                                                                 A new verification link has been sent to your email.
                                                             </div>
                                                         @endif
@@ -183,7 +183,7 @@
                                         </div>
 
                                         {{-- About --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label class="col-md-4 col-lg-3 col-form-label">About</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <textarea name="about" class="form-control" rows="4">{{ old('about', $user->about ?? '') }}</textarea>
@@ -191,7 +191,7 @@
                                         </div>
 
                                         {{-- Phone --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label class="col-md-4 col-lg-3 col-form-label">Phone</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="phone" type="text" class="form-control"
@@ -200,7 +200,7 @@
                                         </div>
 
                                         {{-- Address --}}
-                                        <div class="row mb-4">
+                                        <div class="mb-4 row">
                                             <label class="col-md-4 col-lg-3 col-form-label">Address</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="address" type="text" class="form-control"
@@ -210,12 +210,12 @@
 
                                         {{-- Submit Button --}}
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-primary px-4">
+                                            <button type="submit" class="px-4 btn btn-primary">
                                                 Save Changes
                                             </button>
 
                                             @if (session('status') === 'profile-updated')
-                                                <div class="text-success mt-3">
+                                                <div class="mt-3 text-success">
                                                     Profile updated successfully.
                                                 </div>
                                             @endif
@@ -225,7 +225,7 @@
                                     <!-- End Profile Edit Form -->
                                 </div>
 
-                                <div class="tab-pane fade pt-3" id="profile-change-password">
+                                <div class="pt-3 tab-pane fade" id="profile-change-password">
 
                                     <!-- Change Password Form -->
                                     <form method="POST" action="{{ route('password.update') }}">
@@ -233,7 +233,7 @@
                                         @method('PUT')
 
                                         {{-- Current Password --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label for="current_password" class="col-md-4 col-lg-3 col-form-label">
                                                 Current Password
                                             </label>
@@ -242,13 +242,13 @@
                                                     id="current_password" required>
 
                                                 @error('current_password')
-                                                    <div class="text-danger mt-1">{{ $message }}</div>
+                                                    <div class="mt-1 text-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
 
                                         {{-- New Password --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label for="password" class="col-md-4 col-lg-3 col-form-label">
                                                 New Password
                                             </label>
@@ -257,13 +257,13 @@
                                                     id="password" required>
 
                                                 @error('password')
-                                                    <div class="text-danger mt-1">{{ $message }}</div>
+                                                    <div class="mt-1 text-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
 
                                         {{-- Confirm New Password --}}
-                                        <div class="row mb-3">
+                                        <div class="mb-3 row">
                                             <label for="password_confirmation" class="col-md-4 col-lg-3 col-form-label">
                                                 Re-enter New Password
                                             </label>
@@ -275,12 +275,12 @@
 
                                         {{-- Submit --}}
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-primary px-4">
+                                            <button type="submit" class="px-4 btn btn-primary">
                                                 Change Password
                                             </button>
 
                                             @if (session('status') === 'password-updated')
-                                                <div class="text-success mt-3">
+                                                <div class="mt-3 text-success">
                                                     Password updated successfully.
                                                 </div>
                                             @endif
@@ -306,26 +306,26 @@
 
 {{-- <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Profile') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+        <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.update-profile-information-form')
                 </div>
             </div>
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.update-password-form')
                 </div>
             </div>
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.delete-user-form')
                 </div>

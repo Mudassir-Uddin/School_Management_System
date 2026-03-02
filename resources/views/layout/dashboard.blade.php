@@ -80,7 +80,7 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                         <li class="dropdown-header">
                             You have 3 new messages
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                            <a href="#"><span class="p-2 badge rounded-pill bg-primary ms-2">View all</span></a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -344,6 +344,22 @@
                 </ul>
             </li>
             <!-- End Parents Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse"
+                    href="/Users">
+                    <i class="bi bi-file-person"></i><span>Users</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="users-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Users">
+                            <i class="bi bi-circle"></i><span>List Users</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Users Nav -->
 
         </ul>
 
