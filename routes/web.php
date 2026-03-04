@@ -64,6 +64,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/UsersEdit/{id}', [App\Http\Controllers\UsersController::class, 'edit'])->name('Users.edit');
     Route::post('/UsersUpdate/{id}', [App\Http\Controllers\UsersController::class, 'update'])->name('Users.update');
     Route::get('/UsersDestroy/{id}', [App\Http\Controllers\UsersController::class, 'destroy'])->name('Users.destroy');
+    
+    Route::get('/Students', [App\Http\Controllers\StudentsController::class, 'index'])->name('Students.index');
+    Route::get('/StudentsInsert', [App\Http\Controllers\StudentsController::class, 'create'])->name('Students.create');
+    Route::post('/StudentsStore', [App\Http\Controllers\StudentsController::class, 'store'])->name('Students.store');
+    Route::get('/StudentsEdit/{id}', [App\Http\Controllers\StudentsController::class, 'edit'])->name('Students.edit');
+    Route::post('/StudentsUpdate/{id}', [App\Http\Controllers\StudentsController::class, 'update'])->name('Students.update');
+    Route::get('/StudentsDestroy/{id}', [App\Http\Controllers\StudentsController::class, 'destroy'])->name('Students.destroy');
 });
 
 require __DIR__ . '/auth.php';

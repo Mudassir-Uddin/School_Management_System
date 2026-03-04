@@ -325,6 +325,27 @@
             <!-- End Class Subjects Nav -->
             
             <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#students-nav" data-bs-toggle="collapse"
+                    href="/Students">
+                    <i class="bi bi-people"></i><span>Students</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="students-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Students">
+                            <i class="bi bi-circle"></i><span>List Students</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/StudentsInsert">
+                            <i class="bi bi-circle"></i><span>Add Student</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Students Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#parents-nav" data-bs-toggle="collapse"
                     href="/Parents">
                     <i class="bi bi-person"></i><span>Parents</span><i
