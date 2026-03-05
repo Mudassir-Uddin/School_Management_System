@@ -71,6 +71,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/StudentsEdit/{id}', [App\Http\Controllers\StudentsController::class, 'edit'])->name('Students.edit');
     Route::post('/StudentsUpdate/{id}', [App\Http\Controllers\StudentsController::class, 'update'])->name('Students.update');
     Route::get('/StudentsDestroy/{id}', [App\Http\Controllers\StudentsController::class, 'destroy'])->name('Students.destroy');
+    
+    Route::get('/Student_enrollments', [App\Http\Controllers\Student_enrollmentsController::class, 'index'])->name('Student_enrollments.index');
+    Route::get('/Student_enrollmentsInsert', [App\Http\Controllers\Student_enrollmentsController::class, 'create'])->name('Student_enrollments.create');
+    Route::post('/Student_enrollmentsStore', [App\Http\Controllers\Student_enrollmentsController::class, 'store'])->name('Student_enrollments.store');
+    Route::get('/Student_enrollmentsEdit/{id}', [App\Http\Controllers\Student_enrollmentsController::class, 'edit'])->name('Student_enrollments.edit');
+    Route::post('/Student_enrollmentsUpdate/{id}', [App\Http\Controllers\Student_enrollmentsController::class, 'update'])->name('Student_enrollments.update');
+    Route::get('/Student_enrollmentsDestroy/{id}', [App\Http\Controllers\Student_enrollmentsController::class, 'destroy'])->name('Student_enrollments.destroy');
 });
 
 require __DIR__ . '/auth.php';

@@ -344,6 +344,27 @@
                 </ul>
             </li>
             <!-- End Students Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Student_enrollments-nav" data-bs-toggle="collapse"
+                    href="/Student_enrollments">
+                    <i class="bi bi-person-check"></i><span>Student Enrollments</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Student_enrollments-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Student_enrollments">
+                            <i class="bi bi-circle"></i><span>List Student Enrollments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Student_enrollmentsInsert">
+                            <i class="bi bi-circle"></i><span>Add Student Enrollments</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Student_enrollments Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#parents-nav" data-bs-toggle="collapse"
