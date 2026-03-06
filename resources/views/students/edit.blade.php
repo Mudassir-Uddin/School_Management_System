@@ -22,10 +22,10 @@
     
                                 <div class="col-12">
                                     <label class="form-label">Users</label>
-                                    <select name="user_id" class="form-control">
+                                    <select name="user_id" class="form-select">
                                         @foreach ($users as $user)
                                             <option value="{{ $user->id }}"
-                                                {{ old('user_id', $user->user_id) == $user->id ? 'selected' : '' }}>
+                                                {{ old('user_id', $students->user_id) == $user->id ? 'selected' : '' }}>
                                                 {{ $user->name }}
                                             </option>
                                         @endforeach
@@ -81,7 +81,7 @@
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Update</button>
-                                    <a href="{{ route('Academic_years.index') }}" class="btn btn-secondary">Cancel</a>
+                                    <a href="{{ route('Students.index') }}" class="btn btn-secondary">Cancel</a>
                                 </div>
                             </form>
 

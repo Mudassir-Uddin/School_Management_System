@@ -103,7 +103,7 @@
                                 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Update</button>
-                                    <a href="{{ route('Academic_years.index') }}" class="btn btn-secondary">Cancel</a>
+                                    <a href="{{ route('Student_enrollments.index') }}" class="btn btn-secondary">Cancel</a>
                                 </div>
                             </form>
 

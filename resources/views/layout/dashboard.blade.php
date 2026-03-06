@@ -306,7 +306,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#class-subjects-nav" data-bs-toggle="collapse"
                     href="/ClassSubjects">
-                    <i class="bi bi-book"></i><span>Class Subjects</span><i
+                    <i class="bi bi-journal-bookmark"></i><span>Class Subjects</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="class-subjects-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -364,7 +364,29 @@
                     </li>
                 </ul>
             </li>
+            
             <!-- End Student_enrollments Nav -->
+                        <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Teachers-nav" data-bs-toggle="collapse"
+                    href="/Teachers">
+                    <i class="bi bi-mortarboard"></i><span>Teachers</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Teachers-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Teachers">
+                            <i class="bi bi-circle"></i><span>List Teachers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/TeachersInsert">
+                            <i class="bi bi-circle"></i><span>Add Teachers</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Teachers Nav -->
+
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#parents-nav" data-bs-toggle="collapse"

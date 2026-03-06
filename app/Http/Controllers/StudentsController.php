@@ -25,7 +25,7 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|exists:users,id|unique:students,user_id',
+            'user_id' => 'required|exists:users,id|unique:teachers,user_id|unique:students,user_id',
             'admission_date' => 'required',
             'dob' => 'required|date|before:today',
             'gender' => 'required',
@@ -59,6 +59,8 @@ class StudentsController extends Controller
                 'required',
                 'exists:users,id',
                 Rule::unique('students', 'user_id')
+                    ->ignore($student->id, 'id'),
+                Rule::unique('teachers', 'user_id')
                     ->ignore($student->id, 'id'),
             ],
             'admission_date' => 'required|date',
