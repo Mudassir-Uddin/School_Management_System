@@ -364,9 +364,9 @@
                     </li>
                 </ul>
             </li>
-            
             <!-- End Student_enrollments Nav -->
-                        <li class="nav-item">
+                 
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#Teachers-nav" data-bs-toggle="collapse"
                     href="/Teachers">
                     <i class="bi bi-mortarboard"></i><span>Teachers</span><i
@@ -387,6 +387,26 @@
             </li>
             <!-- End Teachers Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Teacher_assignments-nav" data-bs-toggle="collapse"
+                    href="/Teacher_assignments">
+                    <i class="bi bi-mortarboard"></i><span>Teacher Assignments</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Teacher_assignments-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Teacher_assignments">
+                            <i class="bi bi-circle"></i><span>List Teacher Assignments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Teacher_assignmentsInsert">
+                            <i class="bi bi-circle"></i><span>Add Teacher Assignments</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Teacher Assignments Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#parents-nav" data-bs-toggle="collapse"
