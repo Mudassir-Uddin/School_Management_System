@@ -430,6 +430,27 @@
             <!-- End Parents Nav -->
             
             <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#ParentStudents-nav" data-bs-toggle="collapse"
+                    href="/Parent_students">
+                    <i class="bi bi-person"></i><span>ParentStudents</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="ParentStudents-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/Parent_students">
+                            <i class="bi bi-circle"></i><span>List ParentStudents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Parent_studentsInsert">
+                            <i class="bi bi-circle"></i><span>Add Parent</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End ParentStudents Nav -->
+            
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse"
                     href="/Users">
                     <i class="bi bi-file-person"></i><span>Users</span><i

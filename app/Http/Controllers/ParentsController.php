@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ParentsController extends Controller
 {
@@ -23,7 +24,7 @@ class ParentsController extends Controller
         $request->validate([
             'father_name' => 'required',
             'mother_name' => 'nullable',
-            'phone' => 'required|numeric',
+            'phone' => 'required|digits:11|starts_with:03|unique:parents,phone',
         ]);
 
         $parent = new \App\Models\Parents();
@@ -44,13 +45,19 @@ class ParentsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $parent = \App\Models\Parents::findOrFail($id);
+
         $request->validate([
             'father_name' => 'required',
             'mother_name' => 'nullable',
-            'phone' => 'required|numeric',
+            'phone' => [
+                'required',
+                'digits:11',
+                'starts_with:03',
+                Rule::unique('parents', 'phone')->ignore($parent->id),
+            ],
         ]);
 
-        $parent = \App\Models\Parents::findOrFail($id);
         $parent->update($request->all());
 
         return redirect('/Parents')
