@@ -19,15 +19,17 @@
         <section class="section">
             <div class="row">
                 <div class="col-lg-12">
-
+                    
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Subjects List</h5>
+                            <a href="/SubjectsInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Subjects
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     @php
-                                        $i=0;
+                                        $i = 0;
                                     @endphp
                                     <tr>
                                         <th scope="col">#</th>
@@ -46,10 +48,10 @@
                                             <td>{{ $subject->created_at }}</td>
                                             {{-- <td>{{ $subject->updated_at }}</td> --}}
                                             <td>
-                                                <a href="/SubjectsEdit/{{ $subject->id }}"
-                                                    class="btn btn-primary">Edit</a>
-                                                <a href="/SubjectsDestroy/{{ $subject->id }}"
-                                                    class="btn btn-danger">Delete</a>        
+                                                <a href="/SubjectsEdit/{{ $subject->id }}" class="btn btn-primary"><i
+                                                        class="bi bi-pencil-square"></i> Edit</a>
+                                                <a href="/SubjectsDestroy/{{ $subject->id }}" class="btn btn-danger"><i
+                                                        class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

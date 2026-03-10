@@ -25,7 +25,7 @@ class Student_enrollmentsController extends Controller
         $students = Students::all();
         $classes = Classes::all();
         $academic_years = Academic_years::all();
-        return view('student_enrollments.create', compact('students','classes','academic_years'));
+        return view('student_enrollments.create', compact('students', 'classes', 'academic_years'));
     }
 
     public function store(Request $request)
@@ -36,6 +36,7 @@ class Student_enrollmentsController extends Controller
             'academic_year_id' => 'required',
             'admission_date' => 'required',
             'status' => 'required',
+            'roll_number' => 'required|digits:10|starts_with:03|unique:student_enrollments,roll_number'
         ]);
 
         $St_En = new Student_enrollments();
@@ -56,7 +57,7 @@ class Student_enrollmentsController extends Controller
         $students = Students::all();
         $classes = Classes::all();
         $academic_years = Academic_years::all();
-        return view('student_enrollments.edit', compact('St_En','students','classes','academic_years'));
+        return view('student_enrollments.edit', compact('St_En', 'students', 'classes', 'academic_years'));
     }
 
     public function update(Request $request, $id)
@@ -74,8 +75,13 @@ class Student_enrollmentsController extends Controller
             'academic_year_id' => 'required',
             'admission_date' => 'required|date',
             'status' => 'required',
-            'roll_number' => 'required',
-            
+            'roll_number' => [
+                'required',
+                'digits:10',
+                'starts_with:03',
+                Rule::unique('student_enrollments', 'roll_number')->ignore($St_En->id),
+            ],
+
         ]);
 
         $St_En->update($validated);

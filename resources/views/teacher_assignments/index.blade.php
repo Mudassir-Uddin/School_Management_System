@@ -22,7 +22,9 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Teacher Assignments List</h5>
+                            <a href="/Teacher_assignmentsInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Teacher Assignments
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
@@ -51,15 +53,16 @@
                                             <td scope="row">{{ ++$i }}</td>
                                             <td>{{ $TA->teacher->user->name }}</td>
 
-                                            <td>{{ $TA->classSubject->class->name }} - {{ $TA->classSubject->subject->name }}</td>
+                                            <td>{{ $TA->classSubject->class->name }} -
+                                                {{ $TA->classSubject->subject->name }}</td>
                                             <td>{{ $TA->academic_year->name }}</td>
                                             <td>{{ $TA->created_at }}</td>
                                             {{-- <td>{{ $TA->updated_at }}</td> --}}
                                             <td>
                                                 <a href="/Teacher_assignmentsEdit/{{ $TA->id }}"
-                                                    class="btn btn-primary">Edit</a>
+                                                    class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
                                                 <a href="/Teacher_assignmentsDestroy/{{ $TA->id }}"
-                                                    class="btn btn-danger">Delete</a>
+                                                    class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

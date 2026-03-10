@@ -22,12 +22,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Classes List</h5>
+                            <a href="/ClassesInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Classes
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     @php
-                                        $i=0;
+                                        $i = 0;
                                     @endphp
                                     <tr>
                                         <th scope="col">#</th>
@@ -52,14 +54,14 @@
                                             <td>{{ $class->name }}</td>
                                             <td>{{ $class->section->name }}</td>
                                             <td>{{ $class->academicYear->name }}</td>
-                                            
+
                                             <td>{{ $class->created_at }}</td>
                                             {{-- <td>{{ $class->updated_at }}</td> --}}
                                             <td>
-                                                <a href="/ClassesEdit/{{ $class->id }}"
-                                                    class="btn btn-primary">Edit</a>
-                                                <a href="/ClassesDestroy/{{ $class->id }}"
-                                                    class="btn btn-danger">Delete</a>
+                                                <a href="/ClassesEdit/{{ $class->id }}" class="btn btn-primary"><i
+                                                        class="bi bi-pencil-square"></i> Edit</a>
+                                                <a href="/ClassesDestroy/{{ $class->id }}" class="btn btn-danger"><i
+                                                        class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

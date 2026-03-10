@@ -22,12 +22,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Parents List</h5>
+                            <a href="/ParentsInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Parents
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     @php
-                                        $i=0;
+                                        $i = 0;
                                     @endphp
                                     <tr>
                                         <th scope="col">#</th>
@@ -48,16 +50,16 @@
                                     @foreach ($parents as $parent)
                                         <tr>
                                             <td scope="row">{{ ++$i }}</td>
-                                            <td>{{ $parent->father_name}}</td>
+                                            <td>{{ $parent->father_name }}</td>
                                             <td>{{ $parent->mother_name }}</td>
                                             <td>{{ $parent->phone }}</td>
                                             <td>{{ $parent->created_at }}</td>
                                             {{-- <td>{{ $parent->updated_at }}</td> --}}
                                             <td>
-                                                <a href="/ParentsEdit/{{ $parent->id }}"
-                                                    class="btn btn-primary">Edit</a>
-                                                <a href="/ParentsDestroy/{{ $parent->id }}"
-                                                    class="btn btn-danger">Delete</a>        
+                                                <a href="/ParentsEdit/{{ $parent->id }}" class="btn btn-primary"><i
+                                                        class="bi bi-pencil-square"></i> Edit</a>
+                                                <a href="/ParentsDestroy/{{ $parent->id }}" class="btn btn-danger"><i
+                                                        class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

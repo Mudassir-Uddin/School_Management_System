@@ -22,12 +22,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Parent Students List</h5>
+                            <a href="/Parent_studentsInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Parent Students
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     @php
-                                        $i=0;
+                                        $i = 0;
                                     @endphp
                                     <tr>
                                         <th scope="col">#</th>
@@ -53,17 +55,18 @@
                                         <tr>
                                             <td scope="row">{{ ++$i }}</td>
                                             <td>{{ $parent_student->student->student->user->name }}</td>
-                                            <td>{{ $parent_student->parent->father_name }} - {{ $parent_student->parent->phone }}</td>
+                                            <td>{{ $parent_student->parent->father_name }} -
+                                                {{ $parent_student->parent->phone }}</td>
                                             <td>{{ $parent_student->student->class->name }}</td>
                                             <td>{{ $parent_student->student->class->section->name }}</td>
-                                            
+
                                             <td>{{ $parent_student->created_at }}</td>
                                             {{-- <td>{{ $parent_student->updated_at }}</td> --}}
                                             <td>
                                                 <a href="/Parent_studentsEdit/{{ $parent_student->id }}"
-                                                    class="btn btn-primary">Edit</a>
+                                                    class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
                                                 <a href="/Parent_studentsDestroy/{{ $parent_student->id }}"
-                                                    class="btn btn-danger">Delete</a>
+                                                    class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

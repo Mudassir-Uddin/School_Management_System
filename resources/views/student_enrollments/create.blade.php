@@ -89,7 +89,8 @@
 
                                 <div class="col-12">
                                     <label for="inputNanme4" class="form-label">roll_number</label>
-                                    <input type="number" name="roll_number" class="form-control" id="inputNanme4">
+                                    <input type="number" name="roll_number" class="form-control" id="inputNanme4"
+                                        value="{{ old('roll_number', $student->roll_number ?? '') }}">
                                     @error('roll_number')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

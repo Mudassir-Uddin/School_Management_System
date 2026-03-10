@@ -22,12 +22,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Teachers List</h5>
+                            <a href="/TeachersInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Teachers
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     @php
-                                        $i=0;
+                                        $i = 0;
                                     @endphp
                                     <tr>
                                         <th scope="col">#</th>
@@ -60,14 +62,14 @@
                                             <td>{{ $Teacher->experience_years }}</td>
                                             <td>{{ $Teacher->joining_date }}</td>
                                             <td>{{ $Teacher->salary }}</td>
-                                            
+
                                             <td>{{ $Teacher->created_at }}</td>
                                             {{-- <td>{{ $Teacher->updated_at }}</td> --}}
                                             <td>
-                                                <a href="/TeachersEdit/{{ $Teacher->id }}"
-                                                    class="btn btn-primary">Edit</a>
-                                                <a href="/TeachersDestroy/{{ $Teacher->id }}"
-                                                    class="btn btn-danger">Delete</a>
+                                                <a href="/TeachersEdit/{{ $Teacher->id }}" class="btn btn-primary"><i
+                                                        class="bi bi-pencil-square"></i> Edit</a>
+                                                <a href="/TeachersDestroy/{{ $Teacher->id }}" class="btn btn-danger"><i
+                                                        class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

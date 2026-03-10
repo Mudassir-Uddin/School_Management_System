@@ -22,12 +22,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Student Enrollments List</h5>
+                            <a href="/Student_enrollmentsInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Student Enrollments
+                            </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     @php
-                                        $i=0;
+                                        $i = 0;
                                     @endphp
                                     <tr>
                                         <th scope="col">#</th>
@@ -64,14 +66,14 @@
                                             <td>{{ $St_En->admission_date }}</td>
                                             <td>{{ $St_En->status }}</td>
                                             <td>{{ $St_En->roll_number }}</td>
-                                            
+
                                             <td>{{ $St_En->created_at }}</td>
                                             {{-- <td>{{ $St_En->updated_at }}</td> --}}
                                             <td>
                                                 <a href="/Student_enrollmentsEdit/{{ $St_En->id }}"
-                                                    class="btn btn-primary">Edit</a>
+                                                    class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
                                                 <a href="/Student_enrollmentsDestroy/{{ $St_En->id }}"
-                                                    class="btn btn-danger">Delete</a>
+                                                    class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach
