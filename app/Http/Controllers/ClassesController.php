@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ClassesController extends Controller
 {
@@ -10,30 +11,22 @@ class ClassesController extends Controller
      public function index()
     {
         $classes = \App\Models\Classes::all();
-        $sections = \App\Models\Sections::all();
-        $acdemic_years = \App\Models\Academic_years::all();
-        return view('classes.index', compact('sections', 'classes', 'acdemic_years'));
+        return view('classes.index', compact('classes'));
     }
 
     public function create()
     {
-        $sections = \App\Models\Sections::all();
-        $acdemic_years = \App\Models\Academic_years::all();
-        return view('classes.create', compact('sections', 'acdemic_years'));
+        return view('classes.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'section_id' => 'required|exists:sections,id',
-            'academic_year_id' => 'required|exists:academic_years,id',
+            'name' => 'required|unique:classes,name'
         ]);
 
         $class = new \App\Models\Classes();
         $class->name = $request->name;
-        $class->section_id = $request->section_id;
-        $class->academic_year_id = $request->academic_year_id;
         $class->save();
 
         return redirect('Classes')->with('success', 'Class created successfully.');
@@ -42,20 +35,20 @@ class ClassesController extends Controller
     public function edit($id)
     {
         $class = \App\Models\Classes::find($id);
-        $sections = \App\Models\Sections::all();
-        $acdemic_years = \App\Models\Academic_years::all();
-        return view('classes.edit', compact('class', 'sections', 'acdemic_years'));
+        return view('classes.edit', compact('class'));
     }
 
     public function update(Request $request, $id)
     {
+        $class = \App\Models\Classes::findOrFail($id);
+
         $request->validate([
-            'name' => 'required',
-            'section_id' => 'required|exists:sections,id',
-            'academic_year_id' => 'required|exists:academic_years,id',
+            'name' => [
+                'required',
+                Rule::unique('classes', 'name')->ignore($class->id),
+            ],
         ]);
 
-        $class = \App\Models\Classes::find($id);
         $class->update($request->all());
 
         return redirect('Classes')

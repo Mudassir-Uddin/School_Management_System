@@ -254,8 +254,15 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->is('ClassSubjects*') ? '' : 'collapsed' }}" href="/ClassSubjects">
+                <a class="nav-link {{ request()->is('ClassSections*') ? '' : 'collapsed' }}" href="/ClassSections">
                     <i class="bi bi-journal-bookmark"></i>
+                    <span>Class Section</span><i class="bi bi-arrow-left-square ms-auto"></i>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link {{ request()->is('ClassSubjects*') ? '' : 'collapsed' }}" href="/ClassSubjects">
+                    <i class="bi bi-journal-richtext"></i>
                     <span>Class Subjects</span><i class="bi bi-arrow-left-square ms-auto"></i>
                 </a>
             </li>

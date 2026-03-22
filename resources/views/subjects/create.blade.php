@@ -27,8 +27,9 @@
                                 @csrf
                                 
                                 <div class="col-12">
-                                    <label for="inputName4" class="form-label">Section Name</label>
-                                    <input type="text" name="name" class="form-control" id="inputName4">
+                                    <label for="inputName4" class="form-label">Subject Name</label>
+                                    <input type="text" name="name" class="form-control" id="inputName4"
+                                    value="{{old('name', $subject->name ?? '')}}">
                                     @error('name')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

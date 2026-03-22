@@ -44,6 +44,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/SubjectsUpdate/{id}', [App\Http\Controllers\SubjectsController::class, 'update'])->name('Subjects.update');
     Route::get('/SubjectsDestroy/{id}', [App\Http\Controllers\SubjectsController::class, 'destroy'])->name('Subjects.destroy');
 
+    Route::get('/ClassSections', [App\Http\Controllers\ClassSectionsController::class, 'index'])->name('ClassSections.index');
+    Route::get('/ClassSectionsInsert', [App\Http\Controllers\ClassSectionsController::class, 'create'])->name('ClassSections.create');
+    Route::post('/ClassSectionsStore', [App\Http\Controllers\ClassSectionsController::class, 'store'])->name('ClassSections.store');
+    Route::get('/ClassSectionsEdit/{id}', [App\Http\Controllers\ClassSectionsController::class, 'edit'])->name('ClassSections.edit');
+    Route::post('/ClassSectionsUpdate/{id}', [App\Http\Controllers\ClassSectionsController::class, 'update'])->name('ClassSections.update');
+    Route::get('/ClassSectionsDestroy/{id}', [App\Http\Controllers\ClassSectionsController::class, 'destroy'])->name('ClassSections.destroy');
+    
     Route::get('/ClassSubjects', [App\Http\Controllers\ClassSubjectsController::class, 'index'])->name('ClassSubjects.index');
     Route::get('/ClassSubjectsInsert', [App\Http\Controllers\ClassSubjectsController::class, 'create'])->name('ClassSubjects.create');
     Route::post('/ClassSubjectsStore', [App\Http\Controllers\ClassSubjectsController::class, 'store'])->name('ClassSubjects.store');

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher_assignments extends Model
 {
     //
-    protected $fillable = ['teacher_id', 'class_subject_id', 'academic_year_id'];
+    protected $fillable = ['teacher_id', 'class_subjects_id', 'academic_year_id'];
 
     public function teacher()
     {
@@ -16,12 +16,11 @@ class Teacher_assignments extends Model
 
     public function classSubject()
     {
-        return $this->belongsTo(ClassSubjects::class);
+        return $this->belongsTo(ClassSubjects::class, 'class_subjects_id');
     }
 
     public function academic_year()
     {
         return $this->belongsTo(Academic_years::class);
     }
-
 }

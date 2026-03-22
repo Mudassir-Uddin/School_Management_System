@@ -6,12 +6,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Class Tables</h1>
+            <h1>Class Subject Tables</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item">Tables</li>
-                    <li class="breadcrumb-item active">Classes</li>
+                    <li class="breadcrumb-item active">Class Subjects</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -22,8 +22,8 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <a href="/ClassesInsert" class="mt-3 mb-2 btn btn-warning">
-                                <i class="bi bi-plus-circle"></i> Add Classes
+                            <a href="/ClassSubjectsInsert" class="mt-3 mb-2 btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Add Class Subjects
                             </a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
@@ -36,24 +36,30 @@
                                         <th>
                                             Class <b>Name</b>
                                         </th>
+                                        <th>
+                                            Subject <b>Name</b>
+                                        </th>
 
                                         <th data-type="date" data-format="YYYY/DD/MM">Start Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($classes as $class)
+                                    @foreach ($ClassSubject as $CS)
                                         <tr>
                                             <td scope="row">{{ ++$i }}</td>
-                                            <td>{{ $class->name }}</td>
-
-                                            <td>{{ $class->created_at }}</td>
-                                            {{-- <td>{{ $class->updated_at }}</td> --}}
                                             <td>
-                                                <a href="/ClassesEdit/{{ $class->id }}" class="btn btn-primary"><i
+                                            {{ $CS->classSection?->class?->name }} - 
+                                            {{ $CS->classSection?->section?->name }} </td>
+                                            <td>{{ $CS->subject->name }}</td>
+
+                                            <td>{{ $CS->created_at }}</td>
+                                            {{-- <td>{{ $CS->updated_at }}</td> --}}
+                                            <td>
+                                                <a href="/ClassSubjectsEdit/{{ $CS->id }}" class="btn btn-primary"><i
                                                         class="bi bi-pencil-square"></i> Edit</a>
-                                                <a href="/ClassesDestroy/{{ $class->id }}" class="btn btn-danger"><i
-                                                        class="bi bi-trash"></i> Delete</a>
+                                                <a href="/ClassSubjectsDestroy/{{ $CS->id }}"
+                                                    class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

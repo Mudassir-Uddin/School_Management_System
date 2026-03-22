@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SubjectsController extends Controller
 {
@@ -38,11 +39,14 @@ class SubjectsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $subject = \App\Models\Subjects::findOrFail($id);
         $request->validate([
-            'name' => 'required|unique:subjects,name,',
+            'name' => [
+                'required',
+                Rule::unique('subjects', 'name')->ignore($subject->id),
+            ],
         ]);
 
-        $subject = \App\Models\Subjects::findOrFail($id);
         $subject->update($request->all());
 
         return redirect('/Subjects')

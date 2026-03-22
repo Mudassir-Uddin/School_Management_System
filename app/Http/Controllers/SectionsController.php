@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SectionsController extends Controller
 {
@@ -21,7 +22,7 @@ class SectionsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:sections,name',
         ]);
 
         $section = new \App\Models\Sections();
@@ -39,11 +40,16 @@ class SectionsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $section = \App\Models\Sections::findOrFail($id);
+
         $request->validate([
             'name' => 'required',
+            'name' => [
+                'required',
+                Rule::unique('sections', 'name')->ignore($section->id),
+            ],
         ]);
 
-        $section = \App\Models\Sections::find($id);
         $section->update($request->all());
 
         return redirect('Sections')

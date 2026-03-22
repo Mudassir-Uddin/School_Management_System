@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Academic_years;
+use Illuminate\Validation\Rule;
 
 class Academic_yearsController extends Controller
 {
@@ -46,19 +47,17 @@ class Academic_yearsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $academic_year = Academic_years::findOrFail($id);
         $request->validate([
-            'name' => 'required',
+            'name' => [
+                'required',
+                Rule::unique('academic_years', 'name')->ignore($academic_year->id),
+            ],
             'start_date' => 'required|date',
             'end_date' => 'required|date|after:start_date',
             'status' => 'boolean',
         ]);
-        $academic_year = Academic_years::find($id);
-        $academic_year->name = $request->name;
-        $academic_year->start_date = $request->start_date;
-        $academic_year->end_date = $request->end_date;
-        $academic_year->status = $request->status;
-
-        $academic_year->save();
+        $academic_year->update($request->all());
 
         return redirect('/Academic_years')->with('success', 'Academic year updated successfully.');
     }

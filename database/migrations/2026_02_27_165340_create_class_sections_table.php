@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teacher_assignments', function (Blueprint $table) {
+        Schema::create('class_sections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('teacher_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('class_subjects_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('class_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('section_id')->constrained()->cascadeOnDelete();
             $table->foreignId('academic_year_id')->constrained()->cascadeOnDelete();
+            $table->unique(['class_id', 'section_id', 'academic_year_id']);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teacher_assignments');
+        Schema::dropIfExists('class_sections');
     }
 };

@@ -27,36 +27,6 @@
                                 @enderror
                             </div>
 
-                            <div class="col-12">
-                                <label class="form-label">Section</label>
-                                <select name="section_id" class="form-control">
-                                    @foreach ($sections as $section)
-                                        <option value="{{ $section->id }}"
-                                            {{ old('section_id', $class->section_id) == $section->id ? 'selected' : '' }}>
-                                            {{ $section->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error('section_id')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            
-                            <div class="col-12">
-                                <label class="form-label">Academic Year</label>
-                                <select name="academic_year_id" class="form-control">
-                                    @foreach ($acdemic_years as $academic_year)
-                                        <option value="{{ $academic_year->id }}"
-                                            {{ old('academic_year_id', $class->academic_year_id) == $academic_year->id ? 'selected' : '' }}>
-                                            {{ $academic_year->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error('academic_year_id')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Update</button>
                                 <a href="{{ route('Classes.index') }}" class="btn btn-secondary">Cancel</a>

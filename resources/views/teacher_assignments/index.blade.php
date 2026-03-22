@@ -53,8 +53,11 @@
                                             <td scope="row">{{ ++$i }}</td>
                                             <td>{{ $TA->teacher->user->name }}</td>
 
-                                            <td>{{ $TA->classSubject->class->name }} -
-                                                {{ $TA->classSubject->subject->name }}</td>
+                                            <td>
+                                                {{ $TA->classSubject?->classSection->class?->name }} -
+                                                {{ $TA->classSubject?->classSection->section?->name }} -
+                                                {{ $TA->classSubject?->subject?->name }}
+                                            </td>
                                             <td>{{ $TA->academic_year->name }}</td>
                                             <td>{{ $TA->created_at }}</td>
                                             {{-- <td>{{ $TA->updated_at }}</td> --}}

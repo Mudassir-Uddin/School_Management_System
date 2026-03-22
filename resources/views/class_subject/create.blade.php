@@ -28,19 +28,21 @@
 
                                 <div class="col-12">
                                     <label for="inputCategory4" class="form-label">Class</label>
-                                    <select name="class_id" class="form-control" id="inputCategory4">
-                                        @foreach ($classes as $class)
-                                            <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                    <select name="class_section_id" class="form-control" id="inputCategory4">
+                                        @foreach ($ClassSection as $class)
+                                            <option value="{{ $class->id }}">
+                                                {{ $class->class->name }} - {{ $class->section->name }}
+                                            </option>
                                         @endforeach
                                     </select>
-                                    @error('class_id')
+                                    @error('class_section_id')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="col-12">
                                     <label for="inputCategory4" class="form-label">Subject</label>
-                                    <select name="subject_id" class="form-control" id="inputCategory4">
+                                    <select name="subject_id[]" class="form-control" multiple>
                                         @foreach ($subjects as $subject)
                                             <option value="{{ $subject->id }}">{{ $subject->name }}</option>
                                         @endforeach
@@ -48,8 +50,9 @@
                                     @error('subject_id')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
+
                                 </div>
-                                
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>

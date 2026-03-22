@@ -34,7 +34,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th>
-                                            Academic Year <b>Name</b>
+                                            Academic Year
                                         </th>
                                         <th>Start Date</th>
                                         <th>End Date</th>

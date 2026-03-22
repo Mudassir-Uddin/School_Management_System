@@ -28,32 +28,9 @@
 
                                 <div class="col-12">
                                     <label for="inputNanme4" class="form-label">Class Name</label>
-                                    <input type="text" name="name" class="form-control" id="inputNanme4">
+                                    <input type="text" name="name" class="form-control" id="inputNanme4"
+                                    value="{{old('name',$classes->name ?? '')}}">
                                     @error('name')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="inputCategory4" class="form-label">Section</label>
-                                    <select name="section_id" class="form-control" id="inputCategory4">
-                                        @foreach ($sections as $section)
-                                            <option value="{{ $section->id }}">{{ $section->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('section_id')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="inputCategory4" class="form-label">Academic Year</label>
-                                    <select name="academic_year_id" class="form-control" id="inputCategory4">
-                                        @foreach ($acdemic_years as $year)
-                                            <option value="{{ $year->id }}">{{ $year->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('academic_year_id')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>

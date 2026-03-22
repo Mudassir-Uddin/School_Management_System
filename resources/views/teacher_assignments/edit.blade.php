@@ -33,16 +33,16 @@
 
                                 <div class="mb-3">
                                     <label for="inputCategory4" class="form-label">Class Subjects</label>
-                                    <select name="class_subject_ids[]" class="form-control select2" multiple>
+                                    <select name="class_subjects_ids[]" class="form-control select2" multiple>
                                         @foreach ($class_subjects as $cs)
                                             <option value="{{ $cs->id }}"
                                                 {{ in_array(
                                                     $cs->id,
-                                                    $teacher_assignments->where('teacher_id', $teacher_assignments->teacher_id)->pluck('class_subject_id')->toArray(),
+                                                    $teacher_assignments->where('teacher_id', $teacher_assignments->teacher_id)->pluck('class_subjects_id')->toArray(),
                                                 )
                                                     ? 'selected'
                                                     : '' }}>
-                                                {{ $cs->class->name }} - {{ $cs->subject->name }}
+                                                {{ $cs->classSection->class->name }} - {{ $cs->classSection->section->name }} - {{ $cs->subject->name }}
                                             </option>
                                         @endforeach
                                     </select>

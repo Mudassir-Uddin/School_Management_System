@@ -29,7 +29,8 @@
 
                                 <div class="col-12">
                                     <label for="inputName4" class="form-label">Academic Year Name</label>
-                                    <input type="text" name="name" class="form-control" id="inputName4">
+                                    <input type="text" name="name" class="form-control" id="inputName4"
+                                    value="{{old('name',$academic_year->name ?? '')}}">
                                     @error('name')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

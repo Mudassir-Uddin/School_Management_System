@@ -42,8 +42,8 @@
                                 <div class="col-12">
                                     <label for="inputCategory4" class="form-label">class</label>
                                     <select name="class_id" class="form-control" id="inputCategory4">
-                                        @foreach ($classes as $class)
-                                            <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                        @foreach ($class_sections as $class)
+                                            <option value="{{ $class->id }}">{{ $class->class->name }} - {{ $class->section->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('class_id')

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use \App\Models\User;
 use \App\Models\Students;
-use \App\Models\Classes;
+use \App\Models\ClassSections;
 use \App\Models\Academic_years;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -23,9 +23,9 @@ class Student_enrollmentsController extends Controller
     public function create()
     {
         $students = Students::all();
-        $classes = Classes::all();
+        $class_sections = ClassSections::all();
         $academic_years = Academic_years::all();
-        return view('student_enrollments.create', compact('students', 'classes', 'academic_years'));
+        return view('student_enrollments.create', compact('students', 'class_sections', 'academic_years'));
     }
 
     public function store(Request $request)
@@ -55,9 +55,9 @@ class Student_enrollmentsController extends Controller
     {
         $St_En = Student_enrollments::find($id);
         $students = Students::all();
-        $classes = Classes::all();
+        $class_sections = ClassSections::all();
         $academic_years = Academic_years::all();
-        return view('student_enrollments.edit', compact('St_En', 'students', 'classes', 'academic_years'));
+        return view('student_enrollments.edit', compact('St_En', 'students', 'class_sections', 'academic_years'));
     }
 
     public function update(Request $request, $id)
